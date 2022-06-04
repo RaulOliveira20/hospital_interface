@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script src="functions.js" type="text/javascript"></script>
+	<title>Hospital Interface</title>
+</head>
+<body>
+	<div class="title_banner">
+		<h1>Hospital Interface</h1>
+	</div>
+	<label id="logged">Logged in as "Admin"</label>
+	<form action="test.php" method="post">
+		<input class="login_button" type="submit" name="logout" value="Logout"></input>
+	</form>
+	
+	<form action="test.php" method="post">
+		<div id="first_div">
+			<h2>Employees</h2>
+			<br>
+			<input type="submit" id="blue_but" name="see_employees" value="Show employees">
+			<br><br>
+			<input type="submit" id="blue_but" name="see_schedule" value="Show schedules">
+			<br><br>
+			<input type="submit" id="blue_but" name="see_emp_working" value="Show employees working">
+			<br><br>
+			<input type="submit" id="blue_but" name="add_employee" value="Add an employee">
+			<br><br>
+			<input type="submit" id="blue_but" name="remove_employee" value="Remove an employee">
+			<br><br>
+			<input type="submit" id="blue_but" name="change_emp_schedule" value="Change an employee's schedule">
+			<br><br>
+		</div>
+		<div id="second_div">
+			<h2>Registry</h2>
+			<br>
+			<input type="submit" id="blue_but" name="see_allergies" value="Show allergies">
+			<br><br>
+			<input type="submit" id="blue_but" name="see_medicines" value="Show medicines">
+			<br><br>
+			<input type="submit" id="blue_but" name="add_allergy" value="Add an allergy">
+			<br><br>
+			<input type="submit" id="blue_but" name="remove_allergy" value="Remove an allergy">
+			<br><br>
+			<input type="submit" id="blue_but" name="add_medicine" value="Add a medicine">
+			<br><br>
+			<input type="submit" id="blue_but" name="remove_medicine" value="Remove a medicine">
+		</div>
+		<div id="third_div">
+			<h2>Clients</h2>
+			<br>
+			<input type="submit" id="blue_but" name="show_clients" value="Show clients">
+			<br><br>
+			<input type="submit" id="blue_but" name="show_clients_all" value="Show clients allergies">
+			<br><br>
+			<input type="submit" id="blue_but" name="show_clients_med" value="Show clients medicines">
+			<br><br>
+			<input type="submit" id="blue_but" name="show_clients_cons" value="Show clients consultations">
+			<br><br>
+			<input type="submit" id="blue_but" name="add_client" value="Add a client">
+			<br><br>
+			<input type="submit" id="blue_but" name="remove_client" value="Remove a client">
+			<br><br>
+			<input type="submit" id="blue_but" name="add_clients_all" value="Add a client's allergy">
+			<br><br>
+			<input type="submit" id="blue_but" name="remove_clients_all" value="Remove a client's allergy">
+			<br><br>
+			<input type="submit" id="blue_but" name="add_clients_med" value="Add a client's medicine">
+			<br><br>
+			<input type="submit" id="blue_but" name="remove_clients_med" value="Remove a client's medicine">
+			<br><br>
+		</div>
+		<div id="fourth_div">
+			<h2>Consultations</h2>
+			<br>
+			<input type="submit" id="blue_but" name="add_cons" value="Add a consultation (to do)">
+			<br><br>
+			<input type="submit" id="blue_but" name="remove_cons" value="Remove a consultation (to do)">
+			<br><br>
+		</div>
+		<div id="fifth_div">
+			<h2>Highest</h2>
+			<br>
+			<input type="submit" id="blue_but" name="see_high_all" value="Show most gotten allergies">
+			<br><br>
+			<input type="submit" id="blue_but" name="see_high_med" value="Show most used medicines">
+			<br><br>
+			<input type="submit" id="blue_but" name="see_cli_high_cons" value="Show clients w/most consultations">
+			<br><br>
+			<input type="submit" id="blue_but" name="see_emp_high_cons" value="Show employees w/most consultations">
+		</div>
+	</form>
+</body>
+</html>
