@@ -14,3 +14,10 @@ Each of the buttons show different data stored in the database.
 
 This is what shows if the "Show employees" button is clicked:
 
+![hi_see_employees](https://user-images.githubusercontent.com/36230040/176589880-568f43cd-9e2c-480e-ab4c-ee2ebc31d179.png)
+
+The specialty area only has a value for the doctors and it is null for the others.
+
+In this table, the names or the titles can be filtered in the search box. Here is the table displayed with "doctor" in the box:
+
+![hi_see_employees_doctor](https://user-images.githubusercontent.com/36230040/176590291-1838d2fb-f508-436c-8356-fa21a7950cfc.png)
