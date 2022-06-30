@@ -21,3 +21,5 @@ The specialty area only has a value for the doctors and it is null for the other
 In this table, the names or the titles can be filtered in the search box. Here is the table displayed with "doctor" in the box:
 
 ![hi_see_employees_doctor](https://user-images.githubusercontent.com/36230040/176590291-1838d2fb-f508-436c-8356-fa21a7950cfc.png)
+
+Other tables of data also have a search box, which usually allows the user to filter one or two specific columns.
