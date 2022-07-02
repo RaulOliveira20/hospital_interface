@@ -34,3 +34,21 @@ After selecting a day and an hour, and clicking the "submit" button, the table d
 
 ![hi_see_employees_working_thursday_12pm](https://user-images.githubusercontent.com/36230040/177008223-39f248ee-93d4-4e24-867d-5e20f3d9c3a3.png)
 
+To get access to more actions, such as adding, deleting, or altering data stored in the database, the user can login with an account that is labeled as either a hospital staff member or an administrator. If the button in the top right "Register" is clicked, a new account can be created and the type can be chosen as either hospital staff or administrator:
+
+![hi_register_user](https://user-images.githubusercontent.com/36230040/177009684-8537cdae-53d7-464b-808e-15434471eb44.png)
+
+If we go back and go to "Login", a user can login with an account previously registered.
+
+![hi_login_user](https://user-images.githubusercontent.com/36230040/177009764-8efb566e-768c-41e6-946c-2ab605b274f8.png)
+
+If the login is successful and the account type is hospital staff, this is what this type of user will see:
+
+![hi_staff](https://user-images.githubusercontent.com/36230040/177009849-be03a526-155a-46fb-818c-91b506700fb8.png)
+
+If the login is instead done using an administrator account, this is what this user will see:
+
+![hi_admin](https://user-images.githubusercontent.com/36230040/177009943-eff349e6-44c6-4b6c-af52-face6b7cbe1c.png)
+
+
+
