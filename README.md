@@ -50,5 +50,7 @@ If the login is instead done using an administrator account, this is what this u
 
 ![hi_admin](https://user-images.githubusercontent.com/36230040/177009943-eff349e6-44c6-4b6c-af52-face6b7cbe1c.png)
 
+The difference between the admin and staff pages, is that the admin one has 3 extra buttons that allows him to change information of the employees, such as adding/removing one, or altering an employee's schedule.
+
 
 
