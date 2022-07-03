@@ -60,4 +60,4 @@ To add an employee, a name is written, the title is chosen, and if that title is
 
 ![hi_check_new_employee](https://user-images.githubusercontent.com/36230040/177049026-af91874c-13fd-4f9a-9045-6129a45a542a.png)
 
-The new employee can be seen with the new ID in the table, which also incremented the number of employees by one.
+The new employee can be seen with the new ID in the table, which also incremented the total number of employees by one.
