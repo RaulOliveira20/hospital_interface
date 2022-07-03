@@ -61,3 +61,8 @@ To add an employee, a name is written, the title is chosen, and if that title is
 ![hi_check_new_employee](https://user-images.githubusercontent.com/36230040/177049026-af91874c-13fd-4f9a-9045-6129a45a542a.png)
 
 The new employee can be seen with the new ID in the table, which also incremented the total number of employees by one.
+
+Then we can go to "Change an employee's schedule", which in this case is adding a schedule on a particular day, because the newly created employee doesn't have a schedule on any week day yet. The user chooses the employee to alter the schedule and then can select a day of the week, an entry hour and an exit hour:
+
+![hi_add_new_schedule](https://user-images.githubusercontent.com/36230040/177050772-ba1921a0-3e89-4a18-a23b-45bdf748177a.png)
+
