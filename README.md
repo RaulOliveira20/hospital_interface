@@ -52,5 +52,12 @@ If the login is instead done using an administrator account, this is what this u
 
 The difference between the admin and staff pages, is that the admin one has 3 extra buttons that allows him to change information of the employees, such as adding/removing one, or altering an employee's schedule.
 
+The new buttons, in contrast to the ones the average user has available (no account), are able to add, delete or change the data on the database. Here is what shows in order to add an employee:
 
+![hi_add_employee](https://user-images.githubusercontent.com/36230040/177048878-7146e883-a627-401b-bd00-aa47a22aae31.png)
 
+To add an employee, a name is written, the title is chosen, and if that title is "Doctor", the user can also choose a specialty area. If it isn't "Doctor", the specialty area dropdown menu is greyed out and unusable. After submitting, and if it created an employee successfully, the user can go back and click on "Show employees" and search for the name inserted to make sure that the new employee exists in the database:
+
+![hi_check_new_employee](https://user-images.githubusercontent.com/36230040/177049026-af91874c-13fd-4f9a-9045-6129a45a542a.png)
+
+The new employee can be seen with the new id in the table, which also increased the number of employees by one.
