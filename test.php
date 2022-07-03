@@ -356,30 +356,30 @@ else if(isset($_POST['see_emp_working']))
 		<br><br>
 		<label id="s">Hours</label><br>
 		<select id="hour" name="hour">
-			<option value="00">12 AM</option>
-			<option value="01">1 AM</option>
-			<option value="02">2 AM</option>
-			<option value="03">3 AM</option>
-			<option value="04">4 AM</option>
-			<option value="05">5 AM</option>
-			<option value="06">6 AM</option>
-			<option value="07">7 AM</option>
-			<option value="08">8 AM</option>
-			<option value="09">9 AM</option>
-			<option value="10">10 AM</option>
-			<option value="11">11 AM</option>
-			<option value="12">12 PM</option>
-			<option value="13">1 PM</option>
-			<option value="14">2 PM</option>
-			<option value="15">3 PM</option>
-			<option value="16">4 PM</option>
-			<option value="17">5 PM</option>
-			<option value="18">6 PM</option>
-			<option value="19">7 PM</option>
-			<option value="20">8 PM</option>
-			<option value="21">9 PM</option>
-			<option value="22">10 PM</option>
-			<option value="23">11 PM</option>
+			<option value="00">00</option>
+			<option value="01">01</option>
+			<option value="02">02</option>
+			<option value="03">03</option>
+			<option value="04">04</option>
+			<option value="05">05</option>
+			<option value="06">06</option>
+			<option value="07">07</option>
+			<option value="08">08</option>
+			<option value="09">09</option>
+			<option value="10">10</option>
+			<option value="11">11</option>
+			<option value="12">12</option>
+			<option value="13">13</option>
+			<option value="14">14</option>
+			<option value="15">15</option>
+			<option value="16">16</option>
+			<option value="17">17</option>
+			<option value="18">18</option>
+			<option value="19">19</option>
+			<option value="20">20</option>
+			<option value="21">21</option>
+			<option value="22">22</option>
+			<option value="23">23</option>
 		</select>
 		<br><br>
 		<input type="submit" name="see_emp_work" value="Submit">
@@ -562,6 +562,7 @@ else if(isset($_POST['remove_allergy']))
 	?>
 
 	<h2>Remove allergy</h2>
+	<p id="note">(At least one field is required)</p>
 	<form action="test.php" method="post">
 		<label id="s">Allergy ID:</label><br>
 		<input type="number" id="allergy_id" name="allergy_id" pattern="[0-9]*"><br><br>
@@ -591,6 +592,7 @@ else if(isset($_POST['remove_medicine']))
 	?>
 
 	<h2>Remove medicine</h2>
+	<p id="note">(At least one field is required)</p>
 	<form action="test.php" method="post">
 		<label id="s">Medicine ID:</label><br>
 		<input type="number" id="medicine_id" name="medicine_id" pattern="[0-9]*"><br><br>
@@ -621,6 +623,7 @@ else if(isset($_POST['remove_client']))
 	?>
 
 	<h2>Remove client</h2>
+	<p id="note">(At least one field is required)</p>
 	<form action="test.php" method="post">
 		<label id="s">Client ID:</label><br>
 		<input type="number" id="client_id" name="client_id" pattern="[0-9]*"><br><br>
@@ -722,6 +725,83 @@ else if(isset($_POST['remove_clients_med']))
 
 	<?php
 }
+else if(isset($_POST['add_cons']))
+{
+	?>
+
+	<h2>Add a consultation</h2>
+	<form action="test.php" method="post">
+		<label id="s">Client ID:</label><br>
+		<input type="number" id="client_id" name="client_id" required="required" pattern="[0-9]*"><br><br>
+		<label id="s">Employee ID (has to be a Doctor):</label><br>
+		<input type="number" id="doctor_id" name="doctor_id" required="required" pattern="[0-9]*"><br><br>
+		<label id="s">Reason for consultation:</label><br>
+		<select id="reason_cons" name="reason_cons">
+			<option value="Head pain">Head pain</option>
+			<option value="Chest pain">Chest pain</option>
+			<option value="Abdomen pain">Abdomen pain</option>
+			<option value="Back pain">Back pain</option>
+			<option value="Excessive coughing">Excessive coughing</option>
+			<option value="Sore throat">Sore throat</option>
+			<option value="Chills">Chills</option>
+			<option value="Fever">Fever</option>
+			<option value="Dizzy">Dizzy</option>
+			<option value="Nauseated">Nauseated</option>
+			<option value="Shortness of breath">Shortness of breath</option>
+			<option value="Feeling weak">Feeling weak</option>
+			<option value="Ringing in ears">Ringing in ears</option>
+			<option value="Losing hearing">Losing hearing</option>
+			<option value="Blurred vision">Blurred vision</option>
+			<option value="Double vision">Double vision</option>
+			<option value="Trouble sleeping">Trouble sleeping</option>
+			<option value="Trouble swallowing">Trouble swallowing</option>
+			<option value="Lack of appetite">Lack of appetite</option>
+			<option value="Skin rashes">Skin rashes</option>
+		</select>
+		<br><br>
+		<label id="s">Medical conclusion:</label><br>
+		<select id="med_conc" name="med_conc">
+			<option value="Medicine prescribed">Medicine prescribed</option>
+			<option value="Specialist should look at the situation">Specialist should look at the situation</option>
+			<option value="Surgery needed">Surgery needed</option>
+			<option value="Sleep more">Sleep more</option>
+			<option value="Do more exercise">Do more exercise</option>
+			<option value="Change eating habits">Change eating habits</option>
+			<option value="Drink more water">Drink more water</option>
+		</select>
+		<br><br>
+		<input type="submit" name="add_c" value="Submit">
+
+	<?php
+}
+else if(isset($_POST['add_emp_to_cons']))
+{
+	?>
+
+	<h2>Add employee to consultation</h2>
+	<form action="test.php" method="post">
+		<label id="s">Consultation ID:</label><br>
+		<input type="number" id="cons_id" name="cons_id" required="required" pattern="[0-9]*"><br><br>
+		<label id="s">Employee ID:</label><br>
+		<input type="number" id="emp_id" name="emp_id" required="required" pattern="[0-9]*"><br><br>
+		<input type="submit" name="add_emp_to_c" value="Submit">
+	</form>
+
+	<?php
+}
+else if(isset($_POST['remove_cons']))
+{
+	?>
+
+	<h2>Remove consultation</h2>
+	<form action="test.php" method="post">
+		<label id="s">Consultation ID:</label><br>
+		<input type="number" id="cons_id" name="cons_id" required="required" pattern="[0-9]*"><br><br>
+		<input type="submit" name="remove_c" value="Submit">
+	</form>
+
+	<?php
+}
 else if(isset($_POST['add_employee']))
 {
 	?>
@@ -781,6 +861,7 @@ else if(isset($_POST['remove_employee']))
 	?>
 
 	<h2>Remove employee</h2>
+	<p id="note">(At least one field is required)</p>
 	<form action="test.php" method="post">
 		<label id="s">Employee ID:</label><br>
 		<input type="number" id="employee_id" name="employee_id" pattern="[0-9]*"><br><br>
@@ -796,6 +877,7 @@ else if(isset($_POST['change_emp_schedule']))
 	?>
 
 	<h2>Change employee's schedule</h2>
+	<p id="note">(At least one field is required (ID or name) and at least one new hour)</p>
 	<form action="test.php" method="post">
 		<label id="s">Employee ID:</label><br>
 		<input type="number" id="employee_id" name="employee_id" pattern="[0-9]*"><br><br>
@@ -815,59 +897,59 @@ else if(isset($_POST['change_emp_schedule']))
 		<label id="s">New Entry Hour:</label><br>
 		<select id="entry_hour" name="entry_hour">
 			<option value=""></option>
-			<option value="00:00">12 AM</option>
-			<option value="01:00">1 AM</option>
-			<option value="02:00">2 AM</option>
-			<option value="03:00">3 AM</option>
-			<option value="04:00">4 AM</option>
-			<option value="05:00">5 AM</option>
-			<option value="06:00">6 AM</option>
-			<option value="07:00">7 AM</option>
-			<option value="08:00">8 AM</option>
-			<option value="09:00">9 AM</option>
-			<option value="10:00">10 AM</option>
-			<option value="11:00">11 AM</option>
-			<option value="12:00">12 PM</option>
-			<option value="13:00">1 PM</option>
-			<option value="14:00">2 PM</option>
-			<option value="15:00">3 PM</option>
-			<option value="16:00">4 PM</option>
-			<option value="17:00">5 PM</option>
-			<option value="18:00">6 PM</option>
-			<option value="19:00">7 PM</option>
-			<option value="20:00">8 PM</option>
-			<option value="21:00">9 PM</option>
-			<option value="22:00">10 PM</option>
-			<option value="23:00">11 PM</option>
+			<option value="00:00">00</option>
+			<option value="01:00">01</option>
+			<option value="02:00">02</option>
+			<option value="03:00">03</option>
+			<option value="04:00">04</option>
+			<option value="05:00">05</option>
+			<option value="06:00">06</option>
+			<option value="07:00">07</option>
+			<option value="08:00">08</option>
+			<option value="09:00">09</option>
+			<option value="10:00">10</option>
+			<option value="11:00">11</option>
+			<option value="12:00">12</option>
+			<option value="13:00">13</option>
+			<option value="14:00">14</option>
+			<option value="15:00">15</option>
+			<option value="16:00">16</option>
+			<option value="17:00">17</option>
+			<option value="18:00">18</option>
+			<option value="19:00">19</option>
+			<option value="20:00">20</option>
+			<option value="21:00">21</option>
+			<option value="22:00">22</option>
+			<option value="23:00">23</option>
 		</select>
 		<br><br>
 		<label id="s">New Exit Hour:</label><br>
 		<select id="exit_hour" name="exit_hour">
 			<option value=""></option>
-			<option value="00:00">12 AM</option>
-			<option value="01:00">1 AM</option>
-			<option value="02:00">2 AM</option>
-			<option value="03:00">3 AM</option>
-			<option value="04:00">4 AM</option>
-			<option value="05:00">5 AM</option>
-			<option value="06:00">6 AM</option>
-			<option value="07:00">7 AM</option>
-			<option value="08:00">8 AM</option>
-			<option value="09:00">9 AM</option>
-			<option value="10:00">10 AM</option>
-			<option value="11:00">11 AM</option>
-			<option value="12:00">12 PM</option>
-			<option value="13:00">1 PM</option>
-			<option value="14:00">2 PM</option>
-			<option value="15:00">3 PM</option>
-			<option value="16:00">4 PM</option>
-			<option value="17:00">5 PM</option>
-			<option value="18:00">6 PM</option>
-			<option value="19:00">7 PM</option>
-			<option value="20:00">8 PM</option>
-			<option value="21:00">9 PM</option>
-			<option value="22:00">10 PM</option>
-			<option value="23:00">11 PM</option>
+			<option value="00:00">00</option>
+			<option value="01:00">01</option>
+			<option value="02:00">02</option>
+			<option value="03:00">03</option>
+			<option value="04:00">04</option>
+			<option value="05:00">05</option>
+			<option value="06:00">06</option>
+			<option value="07:00">07</option>
+			<option value="08:00">08</option>
+			<option value="09:00">09</option>
+			<option value="10:00">10</option>
+			<option value="11:00">11</option>
+			<option value="12:00">12</option>
+			<option value="13:00">13</option>
+			<option value="14:00">14</option>
+			<option value="15:00">15</option>
+			<option value="16:00">16</option>
+			<option value="17:00">17</option>
+			<option value="18:00">18</option>
+			<option value="19:00">19</option>
+			<option value="20:00">20</option>
+			<option value="21:00">21</option>
+			<option value="22:00">22</option>
+			<option value="23:00">23</option>
 		</select>
 		<br><br>
 		<input type="submit" name="change_emp_sch" value="Submit" onclick="check_input('employee_id', 'employee_name')">
@@ -890,36 +972,67 @@ else if(isset($_POST['change_emp_sch']))
 
 		if($num_res == 1)
 		{
-			if($entry_hour == NULL && $exit_hour == NULL)
-			{
-				echo '<script>alert("One of the hours needs to be selected to make any changes.")</script>';
-			}
-			else if($exit_hour == NULL)
-			{
-				$result = pg_query($db, "UPDATE Horario
-										 SET hora_entrada = '$entry_hour'
-										 WHERE id_empregado = '$id'
-										 AND dia_semana = '$week_day'");
+			$res_day = pg_query($db, "SELECT * FROM Horario WHERE id_empregado = '$id' AND dia_semana = '$week_day'");
+			$num_res_day = pg_num_rows($res_day);
 
-				sch_result($result);
-			}
-			else if($entry_hour == NULL)
+			if($num_res_day == 1)
 			{
-				$result = pg_query($db, "UPDATE Horario
-										 SET hora_saida = '$exit_hour'
-										 WHERE id_empregado = '$id'
-										 AND dia_semana = '$week_day'");
-			
-				sch_result($result);
+				if($entry_hour == NULL && $exit_hour == NULL)
+				{
+					echo '<script>alert("One of the hours needs to be selected to make any changes.")</script>';
+				}
+				else if($exit_hour == NULL)
+				{
+					$result = pg_query($db, "UPDATE Horario
+											 SET hora_entrada = '$entry_hour'
+											 WHERE id_empregado = '$id'
+											 AND dia_semana = '$week_day'");
+
+					sch_result($result);
+				}
+				else if($entry_hour == NULL)
+				{
+					$result = pg_query($db, "UPDATE Horario
+											 SET hora_saida = '$exit_hour'
+											 WHERE id_empregado = '$id'
+											 AND dia_semana = '$week_day'");
+				
+					sch_result($result);
+				}
+				else
+				{
+					$result = pg_query($db, "UPDATE Horario
+											 SET hora_entrada = '$entry_hour', hora_saida = '$exit_hour'
+											 WHERE id_empregado = '$id'
+											 AND dia_semana = '$week_day'");
+				
+					sch_result($result);
+				}
 			}
 			else
 			{
-				$result = pg_query($db, "UPDATE Horario
-										 SET hora_entrada = '$entry_hour', hora_saida = '$exit_hour'
-										 WHERE id_empregado = '$id'
-										 AND dia_semana = '$week_day'");
-			
-				sch_result($result);
+				if($entry_hour == NULL && $exit_hour == NULL)
+				{
+					echo '<script>alert("One of the hours needs to be selected to make any changes.")</script>';
+				}
+				else if($exit_hour == NULL)
+				{
+					$result = pg_query($db, "INSERT INTO Horario VALUES ('$id','$week_day','$entry_hour',NULL)");
+
+					sch_result($result);
+				}
+				else if($entry_hour == NULL)
+				{
+					$result = pg_query($db, "INSERT INTO Horario VALUES ('$id','$week_day',NULL,'$exit_hour')");
+				
+					sch_result($result);
+				}
+				else
+				{
+					$result = pg_query($db, "INSERT INTO Horario VALUES ('$id','$week_day','$entry_hour','$exit_hour')");
+				
+					sch_result($result);
+				}
 			}
 		}
 		else
@@ -940,36 +1053,67 @@ else if(isset($_POST['change_emp_sch']))
 		{
 			$id = $r[0];
 
-			if($entry_hour == NULL && $exit_hour == NULL)
-			{
-				echo '<script>alert("One of the hours needs to be selected to make any changes.")</script>';
-			}
-			else if($exit_hour == NULL)
-			{
-				$result = pg_query($db, "UPDATE Horario
-										 SET hora_entrada = '$entry_hour'
-										 WHERE id_empregado = '$id'
-										 AND dia_semana = '$week_day'");
+			$res_day = pg_query($db, "SELECT * FROM Horario WHERE id_empregado = '$id' AND dia_semana = '$week_day'");
+			$num_res_day = pg_num_rows($res_day);
 
-				sch_result($result);
-			}
-			else if($entry_hour == NULL)
+			if($num_res_day == 1)
 			{
-				$result = pg_query($db, "UPDATE Horario
-										 SET hora_saida = '$exit_hour'
-										 WHERE id_empregado = '$id'
-										 AND dia_semana = '$week_day'");
+				if($entry_hour == NULL && $exit_hour == NULL)
+				{
+					echo '<script>alert("One of the hours needs to be selected to make any changes.")</script>';
+				}
+				else if($exit_hour == NULL)
+				{
+					$result = pg_query($db, "UPDATE Horario
+											 SET hora_entrada = '$entry_hour'
+											 WHERE id_empregado = '$id'
+											 AND dia_semana = '$week_day'");
 
-				sch_result($result);
+					sch_result($result);
+				}
+				else if($entry_hour == NULL)
+				{
+					$result = pg_query($db, "UPDATE Horario
+											 SET hora_saida = '$exit_hour'
+											 WHERE id_empregado = '$id'
+											 AND dia_semana = '$week_day'");
+
+					sch_result($result);
+				}
+				else
+				{
+					$result = pg_query($db, "UPDATE Horario
+											 SET hora_entrada = '$entry_hour', hora_saida = '$exit_hour'
+											 WHERE id_empregado = '$id'
+											 AND dia_semana = '$week_day'");
+
+					sch_result($result);
+				}
 			}
 			else
 			{
-				$result = pg_query($db, "UPDATE Horario
-										 SET hora_entrada = '$entry_hour', hora_saida = '$exit_hour'
-										 WHERE id_empregado = '$id'
-										 AND dia_semana = '$week_day'");
+				if($entry_hour == NULL && $exit_hour == NULL)
+				{
+					echo '<script>alert("One of the hours needs to be selected to make any changes.")</script>';
+				}
+				else if($exit_hour == NULL)
+				{
+					$result = pg_query($db, "INSERT INTO Horario VALUES ('$id','$week_day','$entry_hour',NULL)");
 
-				sch_result($result);
+					sch_result($result);
+				}
+				else if($entry_hour == NULL)
+				{
+					$result = pg_query($db, "INSERT INTO Horario VALUES ('$id','$week_day',NULL,'$exit_hour')");
+				
+					sch_result($result);
+				}
+				else
+				{
+					$result = pg_query($db, "INSERT INTO Horario VALUES ('$id','$week_day','$entry_hour','$exit_hour')");
+				
+					sch_result($result);
+				}
 			}
 		}
 		else
@@ -983,40 +1127,74 @@ else if(isset($_POST['change_emp_sch']))
 
 		if($num_res == 1)
 		{
-			if($entry_hour == NULL && $exit_hour == NULL)
-			{
-				echo '<script>alert("One of the hours needs to be selected to make any changes.")</script>';
-			}
-			else if($exit_hour == NULL)
-			{
-				$result = pg_query($db, "UPDATE Horario
-										 SET hora_entrada = '$entry_hour'
-										 WHERE id_empregado = '$id'
-										 AND dia_semana = '$week_day'");
+			$res_day = pg_query($db, "SELECT * FROM Horario WHERE id_empregado = '$id' AND dia_semana = '$week_day'");
+			$num_res_day = pg_num_rows($res_day);
 
-				sch_result($result);
-			}
-			else if($entry_hour == NULL)
+			if($num_res_day == 1)
 			{
-				$result = pg_query($db, "UPDATE Horario
-										 SET hora_saida = '$exit_hour'
-										 WHERE id_empregado = '$id'
-										 AND dia_semana = '$week_day'");
+				if($entry_hour == NULL && $exit_hour == NULL)
+				{
+					echo '<script>alert("One of the hours needs to be selected to make any changes.")</script>';
+				}
+				else if($exit_hour == NULL)
+				{
+					$result = pg_query($db, "UPDATE Horario
+											 SET hora_entrada = '$entry_hour'
+											 WHERE id_empregado = '$id'
+											 AND dia_semana = '$week_day'");
 
-				sch_result($result);
+					sch_result($result);
+				}
+				else if($entry_hour == NULL)
+				{
+					$result = pg_query($db, "UPDATE Horario
+											 SET hora_saida = '$exit_hour'
+											 WHERE id_empregado = '$id'
+											 AND dia_semana = '$week_day'");
+
+					sch_result($result);
+				}
+				else
+				{
+					$result = pg_query($db, "UPDATE Horario
+											 SET hora_entrada = '$entry_hour', hora_saida = '$exit_hour'
+											 WHERE id_empregado = '$id'
+											 AND dia_semana = '$week_day'");
+
+					sch_result($result);
+				}
 			}
 			else
 			{
-				$result = pg_query($db, "UPDATE Horario
-										 SET hora_entrada = '$entry_hour', hora_saida = '$exit_hour'
-										 WHERE id_empregado = '$id'
-										 AND dia_semana = '$week_day'");
+				if($entry_hour == NULL && $exit_hour == NULL)
+				{
+					echo '<script>alert("One of the hours needs to be selected to make any changes.")</script>';
+				}
+				else if($exit_hour == NULL)
+				{
+					$result = pg_query($db, "INSERT INTO Horario VALUES ('$id','$week_day','$entry_hour',NULL)");
 
-				sch_result($result);
+					sch_result($result);
+				}
+				else if($entry_hour == NULL)
+				{
+					$result = pg_query($db, "INSERT INTO Horario VALUES ('$id','$week_day',NULL,'$exit_hour')");
+				
+					sch_result($result);
+				}
+				else
+				{
+					$result = pg_query($db, "INSERT INTO Horario VALUES ('$id','$week_day','$entry_hour','$exit_hour')");
+				
+					sch_result($result);
+				}
 			}
 		}
 		else
-			echo '<script>alert("ID '; echo($id); echo' does not exist or have name '; echo($name); echo '");</script>';
+		{
+			echo '<script>alert("Either\nID '; echo($id); echo' does not exist\nOR\nID ';
+			echo ($id); echo ' does not correspond to name '; echo($name); echo '.");</script>';
+		}
 	}
 
 	echo '<script>go_back()</script>';
@@ -1260,19 +1438,29 @@ else if(isset($_POST['add_a']))
 {
 	$a = $_POST['allergy_name'];
 
-	$res = pg_query($db, "SELECT id_alergia FROM Alergia ORDER BY id_alergia DESC LIMIT 1");
-	$row = pg_fetch_row($res);
+	$ch = pg_query($db, "SELECT * FROM Alergia WHERE nome_alergia = '$a'");
+	$r = pg_num_rows($ch);
 
-	$id = $row[0];
-	$id++;
-
-	$result = pg_query($db, "INSERT INTO Alergia VALUES ('$id','$a')");
-
-	if($result){
-		echo '<script>alert("Data inserted successfully with ID '; echo($id); echo'!");</script>';
-	} else {
-		echo '<script>alert_ins_fail()</script>';
+	if($r > 0)
+	{
+		echo '<script>alert("Allergy with name '; echo($a); echo ' already exists.");</script>';
 	}
+	else
+	{
+		$res = pg_query($db, "SELECT id_alergia FROM Alergia ORDER BY id_alergia DESC LIMIT 1");
+		$row = pg_fetch_row($res);
+
+		$id = $row[0];
+		$id++;
+
+		$result = pg_query($db, "INSERT INTO Alergia VALUES ('$id','$a')");
+
+		if($result){
+			echo '<script>alert("Data inserted successfully with ID '; echo($id); echo'!");</script>';
+		} else {
+			echo '<script>alert_ins_fail()</script>';
+		}
+	}		
 
 	echo '<script>go_back()</script>';
 }
@@ -1342,7 +1530,10 @@ else if(isset($_POST['remove_a']))
 			}
 		}
 		else
-			echo '<script>alert("ID '; echo($id); echo' does not exist or have name '; echo($name); echo '");</script>';
+		{
+			echo '<script>alert("Either\nID '; echo($id); echo' does not exist\nOR\nID ';
+			echo ($id); echo ' does not correspond to name '; echo($name); echo '.");</script>';
+		}
 	}
 
 	echo '<script>go_back()</script>';
@@ -1351,18 +1542,28 @@ else if(isset($_POST['add_med']))
 {
 	$m = $_POST['medicine_name'];
 
-	$res = pg_query($db, "SELECT id_medicamento FROM Medicamento ORDER BY id_medicamento DESC LIMIT 1");
-	$row = pg_fetch_row($res);
+	$ch = pg_query($db, "SELECT * FROM Medicamento WHERE nome_medicamento = '$m'");
+	$r = pg_num_rows($ch);
 
-	$id = $row[0];
-	$id++;
+	if($r > 0)
+	{
+		echo '<script>alert("Medicine with name '; echo($m); echo ' already exists.");</script>';
+	}
+	else
+	{
+		$res = pg_query($db, "SELECT id_medicamento FROM Medicamento ORDER BY id_medicamento DESC LIMIT 1");
+		$row = pg_fetch_row($res);
 
-	$result = pg_query($db, "INSERT INTO Medicamento VALUES ('$id','$m')");
+		$id = $row[0];
+		$id++;
 
-	if($result){
-		echo '<script>alert("Data inserted successfully with ID '; echo($id); echo'!");</script>';
-	} else {
-		echo '<script>alert_ins_fail()</script>';
+		$result = pg_query($db, "INSERT INTO Medicamento VALUES ('$id','$m')");
+
+		if($result){
+			echo '<script>alert("Data inserted successfully with ID '; echo($id); echo'!");</script>';
+		} else {
+			echo '<script>alert_ins_fail()</script>';
+		}
 	}
 
 	echo '<script>go_back()</script>';
@@ -1433,7 +1634,10 @@ else if(isset($_POST['remove_med']))
 			}
 		}
 		else
-			echo '<script>alert("ID '; echo($id); echo' does not exist or have name '; echo($name); echo '");</script>';
+		{
+			echo '<script>alert("Either\nID '; echo($id); echo' does not exist\nOR\nID ';
+			echo ($id); echo ' does not correspond to name '; echo($name); echo '.");</script>';
+		}
 	}
 
 	echo '<script>go_back()</script>';
@@ -1525,7 +1729,10 @@ else if(isset($_POST['rem_cli']))
 			}
 		}
 		else
-			echo '<script>alert("ID '; echo($id); echo' does not exist or have name '; echo($name); echo '");</script>';
+		{
+			echo '<script>alert("Either\nID '; echo($id); echo' does not exist\nOR\nID ';
+			echo ($id); echo ' does not correspond to name '; echo($name); echo '.");</script>';
+		}
 	}
 
 	echo '<script>go_back()</script>';
@@ -1672,6 +1879,149 @@ else if(isset($_POST['rem_cli_med']))
 
 	echo '<script>go_back()</script>';
 }
+else if(isset($_POST['add_c']))
+{
+	$cli_id = $_POST['client_id'];
+
+	$result = pg_query($db, "SELECT * FROM Cliente WHERE id_cliente = '$cli_id'");
+	$number = pg_num_rows($result);
+
+	if($number == 1)
+	{
+		$doc_id = $_POST['doctor_id'];
+
+		$res = pg_query($db, "SELECT * FROM Empregado WHERE id_empregado = '$doc_id'");
+		$num = pg_num_rows($res);
+
+		if($num == 1)
+		{
+			$row = pg_fetch_row($res);
+			$title = trim($row[2]);
+
+			if($title == "Doctor")
+			{
+				$reason = $_POST['reason_cons'];
+				$med_conc = $_POST['med_conc'];
+
+				$re = pg_query($db, "SELECT id_consulta FROM Consulta ORDER BY id_consulta DESC LIMIT 1");
+				$ro = pg_fetch_row($re);
+
+				$id_cons = $ro[0];
+				$id_cons++;
+
+				$result1 = pg_query($db, "INSERT INTO Consulta VALUES ('$id_cons','$cli_id','$reason','$med_conc')");
+
+				if($result1)
+				{
+					$result2 = pg_query($db, "INSERT INTO ConsultaEmpregado VALUES ('$id_cons','$doc_id','$title')");
+
+					if($result2)
+					{
+						echo '<script>alert("Consultation inserted successfully with ID '; echo($id_cons); echo'!");</script>';
+					}
+					else
+					{
+						echo'<script>alert("Error in attaching doctor to consultation.")</script>';
+					}
+				}
+				else
+				{
+					echo '<script>alert("Error in inserting consultation.");</script>';
+				}
+			}
+			else
+				echo '<script>alert("Employee ID '; echo($doc_id); echo ' is not a doctor.");</script>';
+		}
+		else
+			echo '<script>alert("Employee ID '; echo($doc_id); echo' does not exist.");</script>';
+	}
+	else
+		echo '<script>alert("Client ID '; echo($cli_id); echo' does not exist.");</script>';
+
+	echo '<script>go_back()</script>';
+}
+else if(isset($_POST['add_emp_to_c']))
+{
+	$cons_id = $_POST['cons_id'];
+
+	$result = pg_query($db, "SELECT * FROM Consulta WHERE id_consulta = '$cons_id'");
+	$number = pg_num_rows($result);
+
+	if($number == 1)
+	{
+		$emp_id = $_POST['emp_id'];
+
+		$res = pg_query($db, "SELECT * FROM Empregado WHERE id_empregado = '$emp_id'");
+		$num = pg_num_rows($res);
+
+		if($num == 1)
+		{
+			$resu = pg_query($db, "SELECT * FROM ConsultaEmpregado WHERE id_consulta = '$cons_id' AND id_empregado = '$emp_id'");
+			$numb = pg_num_rows($resu);
+
+			if($numb == 0)
+			{
+				$re = pg_query($db, "SELECT * FROM Empregado WHERE id_empregado = '$emp_id'");
+				$nu = pg_fetch_row($re);
+
+				$title = trim($nu[2]);
+
+				$r = pg_query($db, "INSERT INTO ConsultaEmpregado VALUES ('$cons_id','$emp_id','$title')");
+
+				if($r)
+				{
+					echo '<script>alert("Employee ID '; echo($emp_id); echo' added successfully to Consultation ID '; echo($cons_id); 
+					echo '!");</script>';
+				}
+				else
+				{
+					echo '<script>alert("Error in adding employee to consultation.");</script>';
+				}
+			}
+			else
+			{
+				echo '<script>alert("Employee ID '; echo($emp_id); echo' is already on Consultation ID '; echo($cons_id); 
+				echo '.");</script>';	
+			}
+		}
+		else
+			echo '<script>alert("Employee ID '; echo($emp_id); echo' does not exist.");</script>';
+	}
+	else
+		echo '<script>alert("Consultation ID '; echo($cons_id); echo' does not exist.");</script>';
+
+	echo '<script>go_back()</script>';
+}
+else if(isset($_POST['remove_c']))
+{
+	$cons_id = $_POST['cons_id'];
+
+	$res = pg_query($db, "SELECT * FROM Consulta WHERE id_consulta = '$cons_id'");
+	$num = pg_num_rows($res);
+
+	if($num == 1)
+	{
+		$r = pg_query($db, "DELETE FROM ConsultaEmpregado WHERE id_consulta = '$cons_id'");
+
+		if($r)
+		{
+			$rr = pg_query($db, "DELETE FROM Consulta WHERE id_consulta = '$cons_id'");
+
+			if($rr)
+			{
+				echo '<script>alert("Consultation ID '; echo($cons_id); echo ' removed successfully!");</script>';
+			}
+			else
+				echo '<script>alert("Error in removing consultation.");</script>';
+		}
+		else
+			echo '<script>alert("Error in removing employees from consultation.");</script>';
+	}
+	else
+		echo '<script>alert("Consultation ID '; echo($cons_id); echo' does not exist.");</script>';
+
+	echo '<script>go_back()</script>';
+}
 else if(isset($_POST['add_emp']))
 {
 	$name = $_POST['employee_name'];
@@ -1765,7 +2115,10 @@ else if(isset($_POST['remove_emp']))
 			}
 		}
 		else
-			echo '<script>alert("ID '; echo($id); echo' does not exist or have name '; echo($name); echo '");</script>';
+		{
+			echo '<script>alert("Either\nID '; echo($id); echo' does not exist\nOR\nID ';
+			echo ($id); echo ' does not correspond to name '; echo($name); echo '.");</script>';
+		}
 	}
 
 	echo '<script>go_back()</script>';
