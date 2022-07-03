@@ -66,7 +66,7 @@ Then we can go to "Change an employee's schedule", which in this case is adding 
 
 ![hi_add_new_schedule](https://user-images.githubusercontent.com/36230040/177050772-ba1921a0-3e89-4a18-a23b-45bdf748177a.png)
 
-And then we can go back, go to "Show employees schedule" and search for the employee in question:
+And then we can go back, go to "Show employees working" on the particular day of the week and search for the employee in question:
 
 ![hi_new_employee_schedule](https://user-images.githubusercontent.com/36230040/177050885-68602a78-16f4-4460-ab85-95f06905565a.png)
 
